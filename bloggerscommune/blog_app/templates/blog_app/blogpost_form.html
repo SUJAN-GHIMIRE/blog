@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'blog_app/base.html'  %}
+{% block app_base_body_block %}
+    <div class="container">
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="">
+                </a>
+                <div class="media-body">
+                    <h1>Create new blog</h1>
+                    <form method="post" >
+                        {%csrf_token%}
+                        {{form.as_p}}
+
+                        
+                    
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+   
+
+
+
+
+{%endblock%}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% extends 'blog_app/base.html'  %}
+{% block app_base_body_block %}
+    <ol></ol>
+    {%for items in blogpost_list %}
+    <div class="container">
+        <div class="well">
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="">
+                </a>
+                <div class="media-body">
+                    <a  href="{%url 'blog_app:blogpost_detail' pk=items.pk%}" style="color:inherit;">
+                        <h4 class="media-heading">{{items.title}}</h4>
+                    </a>
+                    <p class="text-right">By {{items.author|capfirst}}</p>
+                    <p>{{items.text|truncatechars:200}}</p>
+                    <ul class="list-inline list-unstyled">
+                        <li><span><i class="glyphicon glyphicon-calendar"></i>{{items.published_date}}</span></li>
+                        <li>|</li>
+                        <span>
+                            <i class="glyphicon glyphicon-comment"></i>
+                            <a href="{%url 'blog_app:add_comment_to_blogpost' pk=items.pk%}" style="color:inherit;">
+                                {{items.approved_comment.count}} comments
+                            </a>
+                             
+                        </span>
+                        <li>|</li>
+                        <li>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                        </li>
+                        <li>|</li>
+                        <li>
+                            
+                            <span><i class="fa fa-facebook-square"></i></span>
+                            <span><i class="fa fa-twitter-square"></i></span>
+                            <span><i class="fa fa-google-plus-square"></i></span>
+                        </li>
+
+
+                        
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    {%block list_block%}
+    
+    {%endblock%}
+{%endblock%}
