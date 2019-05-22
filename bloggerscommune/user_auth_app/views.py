@@ -15,7 +15,7 @@ def index(request):
     return render(request,'index.html')
 
 def user_auth_index(request):
-    return render(request,'user_auth_app/user_auth_index.html')
+    return render(request,'user_auth_app/user_index.html')
 
 
 @login_required
@@ -25,7 +25,7 @@ def special(request):
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('user_index'))
 
 
 
@@ -64,7 +64,7 @@ def registration(request):
     # this return works 1st to display form without any values of its key when else executes
     # in second time after form is filled and users gives value ani clicks submit its value are filled after 
     # validation and its loads the index paf=ge with thank ypu for registering
-    return render(request,'user_auth_app/registration.html',
+    return render(request,'user_auth_app/user_registration.html',
                                     {'user_form':user_form,
                                      'profile_form':profile_form,
                                      'registered':registered})
@@ -81,7 +81,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('user_auth_app:user_auth_index'))
+                return HttpResponseRedirect(reverse('user_auth_app:user_index'))
                 # if view name is passed the a colon is used
                
             

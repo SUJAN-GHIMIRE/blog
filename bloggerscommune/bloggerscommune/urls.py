@@ -19,9 +19,9 @@ from django.contrib.auth.views import LoginView,LogoutView
 
 
 urlpatterns = [
-    path('login/', LoginView.as_view(template_name='registration/login.html'), name="login"),
-    path('logout/', LogoutView.as_view(template_name='blog_app/blogpost_list.html'), name="logout"),
+    # path('login/', LoginView.as_view(template_name='registration/login.html'), name="login"),
+    # path('logout/', LogoutView.as_view(template_name='blog_app/blogpost_list.html'), name="logout"),
     path(r'',include('blog_app.urls')),
-    path('user_auth_app/',include('user_auth_app.urls')),
+    path('user/',include('user_auth_app.urls')),
     path('admin/', admin.site.urls),
 ]
