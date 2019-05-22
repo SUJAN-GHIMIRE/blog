@@ -55,11 +55,11 @@
                             {%for comment in blogpost.comments.all %}
                                 {%if user.is_authenticated or comment.approved_comment %}
                                 
-                                    {%if not comment.approved_comment and request.user == blogpost.author%}
+                                    {%if not comment.approved_comment and blogpost.author.user.username == request.user.username%}
                                         <p>{{comment.comment_text}}</p><br />
                                         <li><span><i class="glyphicon glyphicon-calendar"></i>{{comment.created_date}}</span></li>
                                         <li>|</li>
-                                        <li><span><i class="glyphicon glyphicon-calendar"></i>{{comment.comment_autor}}</span></li>
+                                        <li><span><i class="glyphicon glyphicon-calendar"></i>{{comment.comment_author}}</span></li>
                                         <li>|</li>
                                         
                                         

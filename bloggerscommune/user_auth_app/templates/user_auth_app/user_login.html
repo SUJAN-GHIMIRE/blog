@@ -4,18 +4,30 @@
 {%block index_block%}
 
 
-<div class="jumbotron">
+<div class="container">
     <h1>Please login</h1>
     <form method="POST" action="{% url 'user_auth_app:user_login'%}">
+        <div class="container">
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Enter Username">
+
+        </div>
+        <br>
+        <div class="container">
+            <label for="password">Password:</label>
+            <input type="text" name="password" placeholder="Enter Password">
+        </div>
+        <br>
+        <div class="container">
+            {% csrf_token %}
+            <input type="Submit" name="" value="Login" style="align-self: flex-end">
+        </div>
+
+       
+       
+
         
-
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Enter Username">
-
-        <label for="password">Password:</label>
-        <input type="text" name="password" placeholder="Enter Password">
-        {% csrf_token %}
-        <input type="Submit" name="" value="Login">
+       
 
     </form>
 </div>

@@ -5,6 +5,7 @@ from django import forms
 class BlogPostForm(forms.ModelForm):
     class Meta():
         model = BlogPost
+        
         fields = ('author','title','text')
 
         widgets = {

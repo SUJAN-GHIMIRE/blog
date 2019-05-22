@@ -3,8 +3,8 @@
     {% load staticfiles %}
 
     {%block index_block%}
-        <h1>the registration page</h1>
-        <div class="jumbotron">
+        
+        <div class="container">
 
             <!-- at first the else statement is executed as registered is false and forms are displayed with no values as 
             the value injected are empty i.e just object are created then after form is filled and
@@ -12,10 +12,11 @@
 
 
             {% if registered %}
-                <h1>Thank you for registering! {{user_form.username}}</h1>
+                <h1>Thank you for registering! </h1>
+                        {{user_form.username}}
             {%else%}
-                <h1>Register Here</h1>
-                <h3>Fill Out The Form:</h3>
+                <h3>Register Here</h3>
+                <h4>Fill Out The Form:</h4>
 
                 <form enctype="multipart/form-data" method = "POST" >
                     

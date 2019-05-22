@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 from user_auth_app.models import UserProfileInfo
+# from django.conf import settings
 
 
 # Create your models here.
@@ -48,7 +49,7 @@ class CommentOnPost(models.Model):
         self.save()
     
 
-    def get_absolute_urll(self):
+    def get_absolute_url(self):
         return reverse('blogpost_list')
 
     def __str__(self):

@@ -11,8 +11,8 @@
             </a>
             <div class="media-body">
                 
-                
-                {% if items.author == request.user  %}
+                {% if items.author.user.username == request.user.username  %}
+                    <h1>broooo</h1>
                 
                     <a href="{%url 'blog_app:blogpost_detail' pk=items.pk%}" style="color:inherit;">
                         <h4 class="media-heading">{{items.title}}</h4>
