@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
-from user_auth_app.models import UserProfileInfo
+from user_auth_app.models import UserProfileInfo,User
 # from django.conf import settings
 
 

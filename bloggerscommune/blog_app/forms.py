@@ -9,9 +9,11 @@ class BlogPostForm(forms.ModelForm):
         fields = ('author','title','text')
 
         widgets = {
+            
             'title':forms.TextInput(attrs= {'class':'textinputclass'}),
             'text':forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'})
         }
+        
 
 
 class CommentOnPostForm(forms.ModelForm):
@@ -24,3 +26,5 @@ class CommentOnPostForm(forms.ModelForm):
             'comment_author':forms.TextInput(attrs= {'class':'textinputclass'}),
             'comment_text': forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'})
         }
+        
+        

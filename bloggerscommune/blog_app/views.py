@@ -28,8 +28,32 @@ class BlogPostDetailView(DetailView):
 class BlogPostCreateView(LoginRequiredMixin,CreateView):
     login_url = '/login/'
     redirect_field_name = '/blog_app/blogpost_detail.html'
-    form_class = BlogPostForm
+    print("checkpoint1")
     model = BlogPost
+    print("checkpoint2")
+    form_class = BlogPostForm
+    print("checkpoint3")
+    
+    
+    # def form_valid(self, form,inlines):
+        
+    #     print("checkpoint4")
+        
+
+    #     print(type(self.request.user.username))
+    #     print("checkpoint0")
+    #     print(type(self.request.user))
+    #     print(type(BlogPost.author))
+    #     form.instance.author=self.request.user
+    #     print("checkpoint5")
+        
+    #     print("checkpoint6")
+    #     print(self.request.user)
+    #     return super(BlogPostCreateView,self).form_valid(form,inlines)
+    
+
+
+    
 
 class BlogPostUpdateView(LoginRequiredMixin,UpdateView):
     login_url = '/login/'
